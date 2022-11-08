@@ -5,27 +5,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-        <!-- title and favicon -->
-        <title>Web App</title>
-        <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
-
-        <!-- js -->
-        <script type="module" src="app.js"></script>
-
         <!-- fonts -->
-        <!-- see https://fonts.google.com/ -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap"
+        rel="stylesheet"
+    />
 
         <!-- css -->
         <link rel="stylesheet" href="styles/reset.css" />
         <link rel="stylesheet" href="styles/style.css" />
-        <link rel="stylesheet" href="style/home.css" />
+        <link rel="stylesheet" href="styles/home.css"/>
         <title>Alchemy Goblin Fighter</title>
-
-        <!-- add link for page specific css -->
     </head>
+
     <body>
-        <div>
+        <main>
             <div class="adventurer-stats"></div>
                 <div class="defeated-goblins">
                     <p>You have defeated <span id="defeated-number">0</span> goblins</p>
@@ -36,7 +30,7 @@
                     Your HP:
                     <span id="adventurer-hp">10</span>
                 </p>
-                <img id="adventurer-img" src="./assets/adventurer.png" alt="kid goku"/> == $0
+                <img id="adventurer-img" src="./assets/adventurer.png" alt="kid goku"/>
             </div>
         </div>
         <div>
@@ -49,7 +43,18 @@
                             <button type="submit">Challenge goblin</button>
                         </div>
                     </form>
-                    <div class="goblins">
+                    <div class="goblins"></div>
+                        <div class="goblin">
+                            <p>Terry</p>
+                            <p id="goblin-face-1">😈</p>
+                            <p id="goblin-hp-1">1</p>
+                        </div>
+                        <div class="goblin">
+                            <p>Professor Goblin</p>
+                            <p id="goblin-face-2">😈</p>
+                            <p id="goblin-hp-2">4</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

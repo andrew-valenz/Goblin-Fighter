@@ -1,6 +1,6 @@
 ##Plan
 HTML elements (page load)
-• Input for adding new chicks \*with a button) => form
+• Input for adding new chicks with a button) => form
 • Span for tracking hatched chicks
 • Span for tracking farmer hp
 • Chicks list (div el)

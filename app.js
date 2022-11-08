@@ -1,6 +1,5 @@
 /* Get DOM Elements */
 /* Imports */
-// import functions and grab DOM elements
 import { renderGoblin } from './render-utils.js';
 const defeatedNumberEl = document.querySelector('#defeated-number');
 const adventurerHPEl = document.querySelector('#adventurer-hp');
@@ -66,22 +65,23 @@ function goblinClickHandler(goblinData) {
         adventurerImgEl.classList.add('game-over');
         alert('GAME OVER!!!');
     }
+
+    //  - update the DOM with the new goblin, plater, and defeated goblin
+    adventurerHPEl.textContent = playerHP;
+    defeatedNumberEl.textContent = defeatedGoblinsCount;
+
+    const hpEl = document.getElementById(`goblin-hp-${goblinData.id}`);
+    hpEl.textContent = goblinData.hp < 0 ? 0 : goblinData.hp;
+
+    const faceEl = document.getElementById(`goblin-face-${goblinData.id}`);
+    faceEl.textContent = goblinData.hp > 0 ? '😈' : '🔥';
 }
-//  - update the DOM with the new goblin, plater, and defeated goblin
-adventurerHPEl.textContent = playerHP;
-defeatedNumberEl.textContent = defeatedGoblinsCount;
-
-const hpEl = document.getElementById(`goblin-hp-${goblinData.id}`);
-hpEl.textContent = goblinData.hp < 0 ? 0 : goblinData.hp;
-
-const faceEl = document.getElementById(`goblin-face-${goblinData.id}`);
-faceEl.textContent = goblinData.hp > 0 ? '😈' : '🔥';
 
 /* Display Functions */
 function displayGoblins() {
     //   - "update a list"
     //      - clear out the list DOM
-    goblinsListEl.textContent = '';
+    goblinListEl.textContent = '';
 
     //      - loop through the goblins
     for (let goblin of goblins) {
