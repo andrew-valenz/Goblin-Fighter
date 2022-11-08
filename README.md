@@ -1,8 +1,8 @@
-## Wire frame for planning
+# Wire frame for planning
 
 ![Wire frame](./assets/WF-GoblinFighter.png)
 
-##Plan
+Plan
 HTML elements (page load)
 • Input for adding new goblins with a button) => form
 • Span for tracking new goblins
