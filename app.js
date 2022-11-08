@@ -10,8 +10,8 @@ const goblinListEl = document.querySelector('.goblins');
 let defeatedGoblinsCount = 0;
 let playerHP = 10;
 let goblins = [
-    { id: 1, name: 'Terry', hp: 1 },
-    { id: 2, name: 'Professor Goblin', hp: 4 },
+    { id: 1, name: 'Majin Buu', hp: 1 },
+    { id: 2, name: 'Frieza', hp: 4 },
 ];
 
 let currentId = 3;
