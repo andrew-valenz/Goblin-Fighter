@@ -42,6 +42,59 @@ form.addEventListener('submit', (e) => {
     displayGoblins();
 });
 
-/* Display Functions */
+function goblinClickHandler(goblinData) {
+    if (goblinData.hp <= 0) return;
+    if (Math.random() < 0.33) {
+        goblinData.hp--;
+        alert('you hit ' + goblinData.name);
+    } else {
+        alert('you tried to hit ' + goblinData.name + ' but missed');
+    }
+    //  - possibly decrement player HP
+    if (Math.random() < 0.5) {
+        playerHP--;
+        alert(goblinData.name + ' hit you!');
+    } else {
+        alert(goblinData.name + ' tried to hit you but missed!');
+    }
 
+    if (goblinData.hp === 0) {
+        defeatedGoblinsCount++;
+    }
+
+    if (playerHP === 0) {
+        adventurerImgEl.classList.add('game-over');
+        alert('GAME OVER!!!');
+    }
+}
+//  - update the DOM with the new goblin, plater, and defeated goblin
+adventurerHPEl.textContent = playerHP;
+defeatedNumberEl.textContent = defeatedGoblinsCount;
+
+const hpEl = document.getElementById(`goblin-hp-${goblinData.id}`);
+hpEl.textContent = goblinData.hp < 0 ? 0 : goblinData.hp;
+
+const faceEl = document.getElementById(`goblin-face-${goblinData.id}`);
+faceEl.textContent = goblinData.hp > 0 ? '😈' : '🔥';
+
+/* Display Functions */
+function displayGoblins() {
+    //   - "update a list"
+    //      - clear out the list DOM
+    goblinsListEl.textContent = '';
+
+    //      - loop through the goblins
+    for (let goblin of goblins) {
+        //      - render a new goblin DOM element for each item;
+        const goblinEl = renderGoblin(goblin);
+        // - append that element to the HTML
+
+        goblinEl.addEventListener('click', () => {
+            goblinClickHandler(goblin);
+        });
+
+        goblinListEl.append(goblinEl);
+    }
+}
 // (don't forget to call any display functions you want to run on page load!)
+displayGoblins();
