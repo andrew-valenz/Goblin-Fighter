@@ -1,4 +1,3 @@
-/* Get DOM Elements */
 /* Imports */
 import { renderGoblin } from './render-utils.js';
 const defeatedNumberEl = document.querySelector('#defeated-number');
@@ -17,7 +16,6 @@ let goblins = [
 
 let currentId = 3;
 
-/* Events */
 // - New goblin form
 form.addEventListener('submit', (e) => {
     e.preventDefault();
