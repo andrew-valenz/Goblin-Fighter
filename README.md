@@ -1,27 +1,38 @@
-## The Golden Rule:
+##Plan
+HTML elements (page load)
+• Input for adding new chicks \*with a button) => form
+• Span for tracking hatched chicks
+• Span for tracking farmer hp
+• Chicks list (div el)
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+State
+• Array of chicks (object with id, name hp)
+• Number of hatched chicks
+• Farmer hp
+• currentID (in order to create new chicks with ids)
+Events
+• Each chick is clickable
+• On click...
+◦ Possible decrement the chicks ho
+◦ Possibly decrement the farmers hp
+◦ Possibly increment the hatch chicks
+◦ Update the DOM with new chick and farmer hp and hatched chicks state
+• New chick form (on submit)
+◦ User supplied name & submit form
+◦ Make new chick object
+◦ Add object the chicks array
+◦ “Update list display”
+• Clear out the list DOM
+• Loop through the chicks
+• Render a new chick element for each item
+• Append each el to the container element (going to be using a for loop)
+Functions
+• displayChicks - clear out the list and render the chick el for each item
+• renderChick(chick)- create a chick el for the specific chick object
+• chickClickHandler - take care of the game logic when the chicks are clicked
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+Slices
 
-## Making a plan
-
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Look at the drawing and name the HTML elements you'll need to realize your vision**
-1. **Look at the drawing and imagine using the app. What _state_ do you need to track?**
-1. **For each HTML element ask: Why do I need this? (i.e., "we need div to display the results in")**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How" (i.e., `resultsEl.textContent = newResults`)**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change? Does any DOM update?**
-1. **Think about how to validate each of your features according to a Definition of Done. (Hint: console.log usually helps here.)**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
-
-Additional considerations:
-
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+1. Rendering the chicks list to the page
+2. From to create new chicks (render to page)
+3. Gamification (resulting impacts to HP on user clicks)
