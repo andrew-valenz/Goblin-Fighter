@@ -1,27 +1,42 @@
-## The Golden Rule:
+# Wire frame for planning
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+![Wire frame](./assets/WF-GoblinFighter.png)
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+Plan
+HTML elements (page load)
+• Input for adding new goblins with a button) => form
+• Span for tracking new goblins
+• Span for tracking goblin hp
+• Goblin list (div el)
 
-## Making a plan
+State
+• Array of goblins (object with id, name hp)
+• Number of defeated goblins
+• Adventurer hp
+• currentID (in order to create new goblins with ids)
+Events
+• Each goblin is clickable
+• On click...
+◦ Possible decrement the goblins hp
+◦ Possibly decrement the adventurer hp
+◦ Possibly increment the defeated goblins
+◦ Update the DOM with new goblin and adventurer hp and defeated goblin state
+• New goblin form (on submit)
+◦ User supplied name & submit form
+◦ Make new goblin object
+◦ Add object the goblin array
+◦ “Update list display”
+• Clear out the list DOM
+• Loop through the goblins
+• Render a new goblin element for each item
+• Append each el to the container element (going to be using a for loop)
+Functions
+• displayGoblins- clear out the list and render the goblin el for each item
+• renderGoblin(goblin)- create a goblin el for the specific goblin object
+• goblinClickHandler - take care of the game logic when the goblins are clicked
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Look at the drawing and name the HTML elements you'll need to realize your vision**
-1. **Look at the drawing and imagine using the app. What _state_ do you need to track?**
-1. **For each HTML element ask: Why do I need this? (i.e., "we need div to display the results in")**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How" (i.e., `resultsEl.textContent = newResults`)**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change? Does any DOM update?**
-1. **Think about how to validate each of your features according to a Definition of Done. (Hint: console.log usually helps here.)**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+Slices
 
-Additional considerations:
-
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+1. Rendering the goblins list to the page
+2. From to create new goblins (render to page)
+3. Gamification (resulting impacts to HP on user clicks)
