@@ -98,11 +98,11 @@ footer {
     justify-content: space-between;
 }
 
-.adventurer img {
+.player img {
     width: 350px;
     transform: scaleX(-1);
 }
-.adventurer {
+.player {
     color: #660000;
     font-size: 5rem;
     font-weight: 900;
@@ -112,7 +112,7 @@ footer {
     margin-right: 125px;
 }
 
-.adventurer p {
+.player p {
     background-color: brown;
     border-radius: 15px;
     padding: 20px;

@@ -8,7 +8,7 @@ const goblinListEl = document.querySelector('.goblins');
 
 /* State */
 let defeatedGoblinsCount = 0;
-let playerHP = 10;
+let playerHP = 4;
 let goblins = [
     { id: 1, name: 'Majin Buu', hp: 1 },
     { id: 2, name: 'Frieza', hp: 4 },
@@ -19,6 +19,7 @@ let currentId = 3;
 // - New goblin form
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (playerHP === 0) return;
     //  - User has supplied a name and submitted the form
     const data = new FormData(form);
 
@@ -41,6 +42,7 @@ form.addEventListener('submit', (e) => {
 
 function goblinClickHandler(goblinData) {
     if (goblinData.hp <= 0) return;
+    if (playerHP === 0) return;
     if (Math.random() < 0.33) {
         goblinData.hp--;
         alert('you hit ' + goblinData.name);
